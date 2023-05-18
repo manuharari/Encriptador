@@ -1,7 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;;
+}
+
 body{
-    margin: 0px;
-    padding: 0px;
     background: #F3F5FC;
     ;
 }
 
+header{
+    width: 100%;
+    height: 70px;
+}
+
+.logo{
+    width: 100%;
+    height: 40px;
+    padding-top: 15px;
+    padding-left: 30px;
+}
+
+main{
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerTextbox{
+    position: absolute;
+    left: 200px;
+    top: 100px;
+    padding-left: 100px;
+    width: 108opx;
+    height: 600px;
+}
+
+.textBox{
+    width: 70%;
+    height: 100%;
+    border: none;
+    background-color: #F3F5FC;
+    cursor: pointer;
+    color: #0A3871;
+    font-size: 32px;
+    font-weight: 400;
+}
