@@ -14,11 +14,10 @@ header{
     height: 70px;
 }
 
-.logo{
-    width: 100%;
+.imagenLogo{
     height: 40px;
-    padding-top: 15px;
-    padding-left: 30px;
+    padding-top: 25px;
+    padding-left: 35px;
 }
 
 main{
@@ -80,5 +79,46 @@ main{
     font-weight: 400;
     border: none;
     margin-right: 20px;
+    cursor: pointer;
+}
+
+.button-desencriptar{
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    background-color: #F3F5FC;
+    color: #0A3871;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid #0A3871;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.section2{
+    display: block;
+    position: relative;
+    width: 400px;
+}
+
+.containerResult{
+    display: flex;
+    position: absolute;
+    bottom: 400px;
+}
+
+.containerCopy{
+    display: flex;
+    position: absolute;
+    bottom: 400px;
+    top: 700px;
+    background-color: aquamarine;
+    padding-left: 40px;
+}
+
+.button-copiar{
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
     cursor: pointer;
 }
