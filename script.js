@@ -63,23 +63,23 @@ function desencriptarTexto(mensaje){
     var textoFinal = "";
 
     for(var i = 0; i < texto.length; i++){
-        if(texto[i] == "a"){
+        if(texto[i] == "ai"){
             textoFinal = textoFinal + "a"
             i = i+1;
         }
-        else if(texto[i] == "e"){
+        else if(texto[i] == "enter"){
             textoFinal = textoFinal + "e"
             i= i+4;
         }
-        else if(texto[i] == "i"){
+        else if(texto[i] == "imes"){
             textoFinal = textoFinal + "i"
             i = i+3;
         }
-        else if(texto[i] == "o"){
+        else if(texto[i] == "ober"){
             textoFinal = textoFinal + "o"
             i = i+3
         }
-        else if(texto[i] == "u"){
+        else if(texto[i] == "ufat"){
             textoFinal = textoFinal + "u"
             i = i+3;
         }

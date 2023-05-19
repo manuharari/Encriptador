@@ -33,7 +33,7 @@ main{
     left: 200px;
     top: 100px;
     padding-left: 100px;
-    width: 1080px;
+    width: 960px;
     height: 600px;
 }
 
@@ -42,7 +42,7 @@ main{
     height: 100%;
     border: none;
     background-color: #F3F5FC;
-    cursor: pointer;
+    cursor: auto
     color: #0A3871;
     font-size: 32px;
     font-weight: 400;
