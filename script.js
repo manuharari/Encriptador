@@ -98,3 +98,4 @@ function desencriptarTexto(mensaje){
         navigator.clipboard.writeText(contenido);
         console.log("Listo");
     })
+    
