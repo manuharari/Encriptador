@@ -99,6 +99,13 @@ main{
     display: block;
     position: relative;
     width: 400px;
+    height: 840px;
+    right: 200px;
+    padding-right: 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border-radius: 32px;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.50);
 }
 
 .containerResult{
@@ -112,7 +119,7 @@ main{
     position: absolute;
     bottom: 400px;
     top: 700px;
-    background-color: aquamarine;
+    background-color: aqua;
     padding-left: 40px;
 }
 
@@ -120,5 +127,18 @@ main{
     width: 328px;
     height: 67px;
     border-radius: 24px;
+    background-color: #ffffff;
+    color: #0A3871;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid #0A3871;
     cursor: pointer;
+    position: relative;
+    top: 50px;
+    right: 4px;
+}
+
+.ocultar{
+    display: none;
 }

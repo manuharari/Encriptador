@@ -24,7 +24,8 @@ function recuperarTexto(){
     return textBox.value;
 }
 
-function ocultarTexto(){
+function ocultarAdelante(){
     muneco.classList.add("ocultar");
     container.classList.add("ocultar");
 }
+
