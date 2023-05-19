@@ -10,11 +10,21 @@ buttonDesencriptar.onclick = desencriptar;
 function encriptar(){
     ocultarAdelante();
     var textBox = recuperarTexto;
-    result.textContent = encriptarTexto(textBox)
+    result.textContent = encriptarTexto(textBox);
 }
 
 function desencriptar(){
     ocultarAdelante();
     var textBox = recuperarTexto;
-    result.textContent = desencriptarTexto(textBox)
+    result.textContent = desencriptarTexto(textBox);
+}
+
+function recuperarTexto(){
+    var textBox = document.querySelector(".textBox");
+    return textBox.value;
+}
+
+function ocultarTexto(){
+    muneco.classList.add("ocultar");
+    container.classList.add("ocultar");
 }
