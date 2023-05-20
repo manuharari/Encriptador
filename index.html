@@ -11,7 +11,6 @@
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-        <script src="script.js" defer></script>
         <title>Challenge Encriptador</title>
         
     </head>
@@ -24,7 +23,7 @@
         <main>
             <section class="section1">
                 <div class="containerTextbox">
-                    <textarea placeholder="Ingrese el texto aqui" class="textBox"></textarea>
+                    <textarea placeholder="Ingrese el texto aqui" id="bien" class="textBox"></textarea>
                 </div>
                 <div class="alert">
                     <img src="FIGMA/Elementos/Alert.png" alt="alert">
@@ -51,12 +50,109 @@
                 </div>
             </section>
         </main>
+
+        
         
     </body>
 
 
 </html>
 
+<script>
 
+var buttonEncriptar = document.querySelector(".buttonEncriptar");
+var buttonDesencriptar = document.querySelector(".buttonDesencriptar");
+var muneco = document.querySelector(".containerImage");
+var container = document.querySelector(".containerParagraph");
+var result = document.querySelector(".resultext");
+var textos;
+buttonEncriptar.onclick = encriptar;
+buttonDesencriptar.onclick = desencriptar;
+
+function encriptar(){
+    ocultarAdelante();
+    var textBox = recuperarTexto();
+    result.textContent = encriptarTexto(textBox);
+}
+
+function desencriptar(){
+    ocultarAdelante();
+    var textBox = recuperarTexto();
+    result.textContent = desencriptarTexto(textBox);
+}
+
+function recuperarTexto(){
+    textos = document.getElementById('bien').value;
+    return textos;
+}
+
+function ocultarAdelante(){
+    muneco.classList.add("ocultar");
+    container.classList.add("ocultar");
+}
+
+function encriptarTexto(mensaje){
+    var texto = mensaje;
+    var textoFinal = "";
+
+for(var i = 0; i < texto.length; i++){
+    if(texto[i] == "a"){
+        textoFinal = textoFinal + "ai"
+    }
+    else if(texto[i] == "e"){
+        textoFinal = textoFinal + "enter"
+    }
+    else if(texto[i] == "i"){
+        textoFinal = textoFinal + "imes"
+    }
+    else if(texto[i] == "o"){
+        textoFinal = textoFinal + "ober"
+    }
+    else if(texto[i] == "u"){
+        textoFinal = textoFinal + "ufat"
+    }
+    else {
+        textoFinal = textoFinal + texto[i]
+    }
+}
+
+return textoFinal;
+
+}
+
+function desencriptarTexto(mensaje){
+    var texto = mensaje;
+    var textoFinal = "";
+
+    for(var i = 0; i < texto.length; i++){
+        if(texto[i] == "a"){
+            textoFinal = textoFinal + "ai"
+            i = i+1;
+        }
+        else if(texto[i] == "e"){
+            textoFinal = textoFinal + "enter"
+            i= i+4;
+        }
+        else if(texto[i] == "i"){
+            textoFinal = textoFinal + "imes"
+            i = i+3;
+        }
+        else if(texto[i] == "o"){
+            textoFinal = textoFinal + "ober"
+            i = i+3
+        }
+        else if(texto[i] == "u"){
+            textoFinal = textoFinal + "ufat"
+            i = i+3;
+        }
+        else {
+            textoFinal = textoFinal + texto[i]
+        }
+    }
+    
+    return textoFinal;
+    
+    }
 
     
+</script>
