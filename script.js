@@ -3,25 +3,27 @@ var buttonDesencriptar = document.querySelector(".buttonDesencriptar");
 var muneco = document.querySelector(".containerImage");
 var container = document.querySelector(".containerParagraph");
 var result = document.querySelector(".resultext");
+var text;
 
 buttonEncriptar.onclick = encriptar;
 buttonDesencriptar.onclick = desencriptar;
+buttonCopy.onclick = copiar;
 
 function encriptar(){
     ocultarAdelante();
-    var textBox = recuperarTexto;
+    var textBox = recuperarTexto();
     result.textContent = encriptarTexto(textBox);
 }
 
 function desencriptar(){
     ocultarAdelante();
-    var textBox = recuperarTexto;
+    var textBox = recuperarTexto();
     result.textContent = desencriptarTexto(textBox);
 }
 
 function recuperarTexto(){
-    var textBox = document.querySelector(".textBox");
-    return textBox.value;
+    textos = document.getElementById('cajaTexto').value;
+    return text.value;
 }
 
 function ocultarAdelante(){
@@ -63,24 +65,24 @@ function desencriptarTexto(mensaje){
     var textoFinal = "";
 
     for(var i = 0; i < texto.length; i++){
-        if(texto[i] == "ai"){
-            textoFinal = textoFinal + "a"
+        if(texto[i] == "a"){
+            textoFinal = textoFinal + "ai"
             i = i+1;
         }
-        else if(texto[i] == "enter"){
-            textoFinal = textoFinal + "e"
+        else if(texto[i] == "e"){
+            textoFinal = textoFinal + "enter"
             i= i+4;
         }
-        else if(texto[i] == "imes"){
-            textoFinal = textoFinal + "i"
+        else if(texto[i] == "i"){
+            textoFinal = textoFinal + "imes"
             i = i+3;
         }
-        else if(texto[i] == "ober"){
-            textoFinal = textoFinal + "o"
+        else if(texto[i] == "o"){
+            textoFinal = textoFinal + "ober"
             i = i+3
         }
-        else if(texto[i] == "ufat"){
-            textoFinal = textoFinal + "u"
+        else if(texto[i] == "u"){
+            textoFinal = textoFinal + "ufat"
             i = i+3;
         }
         else {
@@ -92,10 +94,8 @@ function desencriptarTexto(mensaje){
     
     }
 
-    const buttonCopiar = document.querySelector(".buttonCopiar");
-    buttonCopiar.addEventListener("click", copiar = () =>{
-        var contenido = document.querySelector(".textResult").textContent;
-        navigator.clipboard.writeText(contenido);
-        console.log("Listo");
-    })
-    
+const buttonCopiar = document.querySelector(".buttonCopiar");
+buttonCopiar.addEventListener("click", copiar = () => {
+    var cotenido = document.querySelector("resultext").textContent;
+    navigator.clipboard.writeText(contenido);
+})

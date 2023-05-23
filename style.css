@@ -1,40 +1,45 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
 }
 
 body{
     background: #F3F5FC;
-    ;
+    display: grid;
+    grid-template-columns: 120px auto;
+    min-height: 100vh;
 }
 
-header{
+/* header{
     width: 100%;
     height: 70px;
-}
+} */
 
-.imagenLogo{
-    height: 40px;
+ .imagenLogo{
+    /* height: 40px; */
     padding-top: 25px;
     padding-left: 35px;
-}
+} 
 
 main{
-    position: absolute;
-    width: 100%;
-    height: 90%;
+    display: grid;
+    grid-template-columns: auto 400px;
+    padding: 10px;
+}
+
+.section1{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
-.containerTextbox{
-    position: absolute;
-    left: 200px;
-    top: 100px;
-    padding-left: 100px;
-    width: 960px;
-    height: 600px;
+
+textarea{
+    resize: none;
+    outline: none;
+    border: none;
 }
 
 .textBox{
@@ -53,20 +58,22 @@ main{
 }
 
 .alert{
-    position: absolute;
+    /* position: absolute; */
     top: 750px;
     left: 370px;
     display: flex;
+    gap: 10px;
     color: #495057;
-    ;
+    
 }
 
 .containerButtons{
-    position: absolute;
-    top: 800px;
-    height: 80px;
+    /* position: absolute; */
+    display: flex;
+    /* top: 800px; */
+    /* height: 80px;
     padding-left: 15%;
-    padding-top: 15px;
+    padding-top: 15px; */
 }
 
 .buttonEncriptar{
@@ -96,27 +103,33 @@ main{
 }
 
 .section2{
-    display: block;
-    position: relative;
     width: 400px;
-    height: 840px;
-    right: 200px;
-    padding-right: 20px;
+    padding: 20px;
     background-color: #ffffff;
-    box-sizing: border-box;
     border-radius: 32px;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.50);
 }
 
+.containerImage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
 .containerResult{
     display: flex;
-    position: absolute;
-    bottom: 400px;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+/* .invisible{
+    display: none !important;
+} */
 
 .containerCopy{
     display: flex;
-    position: absolute;
     bottom: 400px;
     top: 700px;
     background-color: aqua;
@@ -141,4 +154,21 @@ main{
 
 .ocultar{
     display: none;
+}
+
+@media (max-width:1250px){
+    body{
+        grid-template-columns: auto;
+        grid-template-rows: 80px auto;
+    }
+    main{
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+    }
+    .containerImage{
+        width: 100%;
+    }
+    .containerImage img{
+        display: none;
+    }
 }
