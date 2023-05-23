@@ -3,6 +3,9 @@ var buttonDesencriptar = document.querySelector(".buttonDesencriptar");
 var muneco = document.querySelector(".containerImage");
 var container = document.querySelector(".containerParagraph");
 var result = document.querySelector(".resultext");
+const SINMENSAJE = document.getElementById('imageDisplay')
+const CONMENSAJE = document.getElementById('result')
+let encriptado = true
 var text;
 
 buttonEncriptar.onclick = encriptar;
@@ -99,3 +102,9 @@ buttonCopiar.addEventListener("click", copiar = () => {
     var cotenido = document.querySelector("resultext").textContent;
     navigator.clipboard.writeText(contenido);
 })
+
+const mostrarResultado = (text) => {
+    result.textContent = text
+    SINMENSAJE.classList.toggle('ocultar', encriptado)
+    CONMENSAJE.classList.toggle('ocultar', !encriptado)
+}

@@ -124,9 +124,9 @@ textarea{
     justify-content: space-between;
 }
 
-/* .invisible{
+.invisible{
     display: none !important;
-} */
+}
 
 .containerCopy{
     display: flex;
@@ -152,9 +152,9 @@ textarea{
     right: 4px;
 }
 
-.ocultar{
+/* .ocultar{
     display: none;
-}
+} */
 
 @media (max-width:1250px){
     body{
