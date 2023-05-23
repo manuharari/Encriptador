@@ -2,26 +2,31 @@ var buttonEncriptar = document.querySelector(".buttonEncriptar");
 var buttonDesencriptar = document.querySelector(".buttonDesencriptar");
 var muneco = document.querySelector(".containerImage");
 var container = document.querySelector(".containerParagraph");
-var result = document.querySelector(".resultext");
+var resultext = document.querySelector(".resultext");
+var buttonCopy = document.querySelector(".buttonCopiar")
+// Para el display del resultado
+
 const SINMENSAJE = document.getElementById('imageDisplay')
-const CONMENSAJE = document.getElementById('result')
+const CONMENSAJE = document.getElementById('resultContainer')
+// Para el toggle
+
 let encriptado = true
 var text;
 
 buttonEncriptar.onclick = encriptar;
 buttonDesencriptar.onclick = desencriptar;
-buttonCopy.onclick = copiar;
+// buttonCopy.onclick = copiar;
 
 function encriptar(){
     ocultarAdelante();
     var textBox = recuperarTexto();
-    result.textContent = encriptarTexto(textBox);
+    resultext.textContent = encriptarTexto(textBox);
 }
 
 function desencriptar(){
     ocultarAdelante();
     var textBox = recuperarTexto();
-    result.textContent = desencriptarTexto(textBox);
+    resultext.textContent = desencriptarTexto(textBox);
 }
 
 function recuperarTexto(){
@@ -103,8 +108,14 @@ buttonCopiar.addEventListener("click", copiar = () => {
     navigator.clipboard.writeText(contenido);
 })
 
-const mostrarResultado = (text) => {
+// const mostrarResultado = (text) => {
+//     result.textContent = text
+//     SINMENSAJE.classList.toggle('.invisible', encriptado)
+//     CONMENSAJE.classList.toggle('.invisible', !encriptado)
+// }
+
+const result = (text) => {
     result.textContent = text
-    SINMENSAJE.classList.toggle('ocultar', encriptado)
-    CONMENSAJE.classList.toggle('ocultar', !encriptado)
+    SINMENSAJE.classList.toggle('.invisible', encriptado)
+    CONMENSAJE.classList.toggle('.invisible', !encriptado)
 }
