@@ -55,6 +55,7 @@ textarea {
     color: #0A3871;
     font-size: 32px;
     font-weight: 400;
+    opacity: .75;
 }
 
 .textBox::placeholder {
