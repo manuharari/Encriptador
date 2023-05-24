@@ -1,13 +1,13 @@
 *,
-    ::before,
-    ::after {
-        margin: 0;
-        padding: 0;
-        font-family: 'Montserrat', sans-serif;
-        box-sizing: border-box;
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
 }
 
-body{
+body {
     background: #F3F5FC;
     display: grid;
     grid-template-columns: 120px auto;
@@ -19,34 +19,34 @@ body{
     height: 70px;
 } */
 
- .imagenLogo{
+.imagenLogo {
     object-fit: none;
     width: 80px;
-    height:120px;
+    height: 120px;
     padding-top: 25px;
     padding-left: 35px;
-} 
+}
 
-main{
+main {
     display: grid;
     grid-template-columns: auto 400px;
     padding: 100px;
 }
 
-.section1{
+.section1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 
-textarea{
+textarea {
     resize: none;
     outline: none;
     border: none;
 }
 
-.textBox{
+.textBox {
     width: 70%;
     height: 100%;
     border: none;
@@ -57,11 +57,11 @@ textarea{
     font-weight: 400;
 }
 
-.textBox::placeholder{
+.textBox::placeholder {
     color: #0A3871;
 }
 
-.alert{
+.alert {
     /* position: absolute; */
     top: 750px;
     left: 370px;
@@ -69,10 +69,10 @@ textarea{
     gap: 10px;
     color: #495057;
     padding-bottom: 20px;
-    
+
 }
 
-.containerButtons{
+.containerButtons {
     /* position: absolute; */
     display: flex;
     /* top: 800px; */
@@ -81,7 +81,7 @@ textarea{
     padding-top: 15px; */
 }
 
-.buttonEncriptar{
+.buttonEncriptar {
     width: 328px;
     height: 67px;
     border-radius: 24px;
@@ -94,7 +94,7 @@ textarea{
     cursor: pointer;
 }
 
-.buttonDesencriptar{
+.buttonDesencriptar {
     width: 328px;
     height: 67px;
     border-radius: 24px;
@@ -107,7 +107,7 @@ textarea{
     cursor: pointer;
 }
 
-.section2{
+.section2 {
     width: 400px;
     padding: 20px;
     background-color: #ffffff;
@@ -115,7 +115,7 @@ textarea{
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.50);
 }
 
-.containerImage{
+.containerImage {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -123,25 +123,25 @@ textarea{
     text-align: center;
 }
 
-.containerResult{
+.containerResult {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.invisible{
-    display: none !important;
+.invisible {
+    /* display: none !important; */
+    display: none;
 }
 
-.containerCopy{
+.containerCopy {
     display: flex;
     bottom: 400px;
     top: 700px;
-    background-color: aqua;
     padding-left: 40px;
 }
 
-.buttonCopiar{
+.buttonCopiar {
     width: 328px;
     height: 67px;
     border-radius: 24px;
@@ -157,23 +157,36 @@ textarea{
     right: 4px;
 }
 
-/* .ocultar{
-    display: none;
-} */
-
-@media (max-width:1250px){
-    body{
+@media (max-width:1250px) {
+    body {
         grid-template-columns: auto;
         grid-template-rows: 80px auto;
     }
-    main{
+
+    main {
         grid-template-columns: auto;
         grid-template-rows: auto auto;
     }
-    .containerImage{
+
+    .containerImage {
         width: 100%;
     }
-    .containerImage img{
+
+    .containerImage img {
         display: none;
     }
+}
+
+
+/* PARA PONER EL FONDO ANIMADO */
+body {
+    position: relative;
+    overflow: hidden;
+}
+
+.fondo-animado {
+    width: 100%;
+    position: fixed;
+    object-fit: cover;
+    z-index: -1;
 }

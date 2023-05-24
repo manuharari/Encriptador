@@ -1,121 +1,60 @@
-var buttonEncriptar = document.querySelector(".buttonEncriptar");
-var buttonDesencriptar = document.querySelector(".buttonDesencriptar");
-var muneco = document.querySelector(".containerImage");
-var container = document.querySelector(".containerParagraph");
-var resultext = document.querySelector(".resultext");
-var buttonCopy = document.querySelector(".buttonCopiar")
-// Para el display del resultado
+const DICCIONARIO = Object.freeze({ e: 'enter', i: 'imes', o: 'ober', a: 'ai', u: 'ufat' })
 
-const SINMENSAJE = document.getElementById('imageDisplay')
-const CONMENSAJE = document.getElementById('resultContainer')
-// Para el toggle
+const buttonEncriptar = document.getElementById('button-encriptar')
+const buttonDesencriptar = document.getElementById('button-desencriptar')
 
-let encriptado = true
-var text;
+const CajaTexto = document.getElementById('result')
 
-buttonEncriptar.onclick = encriptar;
-buttonDesencriptar.onclick = desencriptar;
-// buttonCopy.onclick = copiar;
+const cajaMuñeco = document.getElementById('imageDiplay')
+const cajaTextoResultado = document.getElementById('resultContainer')
 
-function encriptar(){
-    ocultarAdelante();
-    var textBox = recuperarTexto();
-    resultext.textContent = encriptarTexto(textBox);
+const buttonCopiar = document.getElementById("button-copiar");
+const resultContainer = document.getElementById('result')
+
+
+/* OBTENER EL TEXTO DE TEXTAREA */
+function recuperarTexto() {
+  return document.getElementById('cajaTexto').value;
 }
 
-function desencriptar(){
-    ocultarAdelante();
-    var textBox = recuperarTexto();
-    resultext.textContent = desencriptarTexto(textBox);
+/* MOSTRAR RESULTADO */
+const mostrarResultado = (text) => {
+  actualizarTexto(text)
+  cajaMuñeco.classList.toggle('invisible', text)
+  cajaTextoResultado.classList.toggle('invisible', !text)
 }
 
-function recuperarTexto(){
-    textos = document.getElementById('cajaTexto').value;
-    return text.value;
+/* ACTUALIZAR EL TEXTO DEL RESULTADO */
+const actualizarTexto = (texto) => {
+  CajaTexto.value = texto
 }
 
-function ocultarAdelante(){
-    muneco.classList.add("ocultar");
-    container.classList.add("ocultar");
+/* COPIAR TEXTO */
+const copiarTexto = () => {
+  const textoEncriptado = resultContainer.value
+  navigator.clipboard.writeText(textoEncriptado);
 }
 
-function encriptarTexto(mensaje){
-    var texto = mensaje;
-    var textoFinal = "";
-
-for(var i = 0; i < texto.length; i++){
-    if(texto[i] == "a"){
-        textoFinal = textoFinal + "ai"
-    }
-    else if(texto[i] == "e"){
-        textoFinal = textoFinal + "enter"
-    }
-    else if(texto[i] == "i"){
-        textoFinal = textoFinal + "imes"
-    }
-    else if(texto[i] == "o"){
-        textoFinal = textoFinal + "ober"
-    }
-    else if(texto[i] == "u"){
-        textoFinal = textoFinal + "ufat"
-    }
-    else {
-        textoFinal = textoFinal + texto[i]
-    }
+/* ENCRIPTAR Y DESENCRIPTAR */
+const cifrarDecifrar = (text, type) => {
+  for (const key in DICCIONARIO) {
+    type === 'encrypt' && (text = text.replaceAll(key, DICCIONARIO[key]))
+    type === 'decrypt' && (text = text.replaceAll(DICCIONARIO[key], key))
+  }
+  return text
 }
 
-return textoFinal;
+/* ESCUCHADORES DE EVENTOS*/
+buttonCopiar.addEventListener("click", copiarTexto)
 
-}
-
-function desencriptarTexto(mensaje){
-    var texto = mensaje;
-    var textoFinal = "";
-
-    for(var i = 0; i < texto.length; i++){
-        if(texto[i] == "a"){
-            textoFinal = textoFinal + "ai"
-            i = i+1;
-        }
-        else if(texto[i] == "e"){
-            textoFinal = textoFinal + "enter"
-            i= i+4;
-        }
-        else if(texto[i] == "i"){
-            textoFinal = textoFinal + "imes"
-            i = i+3;
-        }
-        else if(texto[i] == "o"){
-            textoFinal = textoFinal + "ober"
-            i = i+3
-        }
-        else if(texto[i] == "u"){
-            textoFinal = textoFinal + "ufat"
-            i = i+3;
-        }
-        else {
-            textoFinal = textoFinal + texto[i]
-        }
-    }
-    
-    return textoFinal;
-    
-    }
-
-const buttonCopiar = document.querySelector(".buttonCopiar");
-buttonCopiar.addEventListener("click", copiar = () => {
-    var cotenido = document.querySelector("resultext").textContent;
-    navigator.clipboard.writeText(contenido);
+buttonEncriptar.addEventListener('click', () => {
+  const texto = cifrarDecifrar(recuperarTexto(), 'encrypt')
+  mostrarResultado(texto)
 })
 
-// const mostrarResultado = (text) => {
-//     result.textContent = text
-//     SINMENSAJE.classList.toggle('.invisible', encriptado)
-//     CONMENSAJE.classList.toggle('.invisible', !encriptado)
-// }
+buttonDesencriptar.addEventListener('click', () => {
+  const textoDesencriptado = cifrarDecifrar(recuperarTexto(), 'decrypt')
+  mostrarResultado(textoDesencriptado)
+})
 
-const result = (text) => {
-    result.textContent = text
-    SINMENSAJE.classList.toggle('.invisible', encriptado)
-    CONMENSAJE.classList.toggle('.invisible', !encriptado)
-}
+
