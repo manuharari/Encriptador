@@ -76,6 +76,12 @@ textarea {
 
 }
 
+#imagenAlert{
+    max-width: 100%;
+    height: auto;
+    width: auto\9;
+}
+
 .containerButtons {
     /* position: absolute; */
     display: flex;
