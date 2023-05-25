@@ -70,6 +70,9 @@ textarea {
     gap: 10px;
     color: #495057;
     padding-bottom: 20px;
+    font-weight: bold;
+    font-size: large;
+    background: transparent;
 
 }
 
@@ -128,6 +131,13 @@ textarea {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding-top: 20px;
+}
+
+.resultext{
+    font-size: larger;
+    text-align: center;
+    justify-content: center;
 }
 
 .invisible {
@@ -140,10 +150,11 @@ textarea {
     bottom: 400px;
     top: 700px;
     padding-left: 40px;
+    justify-content: center;
 }
 
 .buttonCopiar {
-    width: 50%;
+    width: 42%;
     height: 67px;
     border-radius: 24px;
     background-color: #ffffff;
@@ -156,7 +167,6 @@ textarea {
     position: relative;
     top: 50px;
     right: 4px;
-
 }
 
 @media (max-width:1250px) {
@@ -193,3 +203,18 @@ body {
     object-fit: cover;
     z-index: -1;
 }
+
+#footer {
+    height: 50px; /* the footer's total height */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+#footer-content {
+    height: 10px; 
+    padding: 8px;
+    font-style: oblique;
+    font-weight: bold;
+    color: 0A3871;
+  }
