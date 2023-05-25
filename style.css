@@ -12,6 +12,10 @@ body {
     display: grid;
     grid-template-columns: 120px auto;
     min-height: 100vh;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "logo main" 
+    "footer footer";
 }
 
 /* header{
@@ -25,12 +29,15 @@ body {
     height: 120px;
     padding-top: 25px;
     padding-left: 35px;
+    grid-area: logo;
 }
 
 main {
     display: grid;
     grid-template-columns: auto 400px;
     padding: 100px;
+    grid-area: main;
+    gap: 20px;
 }
 
 .section1 {
@@ -80,11 +87,14 @@ textarea {
     max-width: 100%;
     height: auto;
     width: auto\9;
+
 }
 
 .containerButtons {
     /* position: absolute; */
     display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
     /* top: 800px; */
     /* height: 80px;
     padding-left: 15%;
@@ -113,7 +123,7 @@ textarea {
     font-size: 16px;
     font-weight: 400;
     border: 1px solid #0A3871;
-    margin-right: 20px;
+    /* margin-right: 20px; */
     cursor: pointer;
 }
 
@@ -178,7 +188,11 @@ textarea {
 @media (max-width:1250px) {
     body {
         grid-template-columns: auto;
-        grid-template-rows: 80px auto;
+        grid-template-rows: 80px auto auto;
+        grid-template-areas:
+        "logo"
+        "main"
+        "footer";
     }
 
     main {
@@ -192,6 +206,25 @@ textarea {
 
     .containerImage img {
         display: none;
+    }
+}
+
+@media (max-width:800px) {
+    body {
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+        "header"
+        "main"
+        "footer";
+
+    }
+
+    main {
+        padding: 2rem;
+    }
+
+    .containerButtons{
+        flex-direction: column;
     }
 }
 
@@ -213,8 +246,12 @@ body {
 #footer {
     height: 50px; /* the footer's total height */
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
+    justify-content: center;
+    grid-area: footer;
+    display: flex;
+    align-items: flex-end;
   }
   
 #footer-content {
