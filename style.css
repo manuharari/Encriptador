@@ -222,5 +222,6 @@ body {
     padding: 8px;
     font-style: oblique;
     font-weight: bold;
-    color: 0A3871;
+    color: #0A3871;
+    align-items: center;
   }
