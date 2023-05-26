@@ -1,3 +1,4 @@
+
 const DICCIONARIO = Object.freeze({ e: 'enter', i: 'imes', o: 'ober', a: 'ai', u: 'ufat' })
 
 const buttonEncriptar = document.getElementById('button-encriptar')
@@ -10,6 +11,27 @@ const cajaTextoResultado = document.getElementById('resultContainer')
 
 const buttonCopiar = document.getElementById("button-copiar");
 const resultContainer = document.getElementById('result')
+
+/* BLOQUEAR MAYUSCULAS Y CARACTERES ESPECIALES */
+
+function validateAndProcess() {
+  
+  var userInput = document.getElementById("cajaTexto").value;
+
+  if (validateInput(userInput)) {
+    // Si solo tiene minusculas, proseguir
+    alert("Valido, procesando!");
+  } else {
+    // Si existe algun caracter no aceptado informar
+    alert("Solo minusculas, sin numeros ni caracteres especiales");
+  }
+}
+
+function validateInput(input) {
+  var lowercaseRegex = /^[a-z]+$/; // Solo minusculas
+  return lowercaseRegex.test(input);
+}
+
 
 
 /* OBTENER EL TEXTO DE TEXTAREA */
