@@ -18,13 +18,11 @@ function validateAndProcess() {
   
   var userInput = document.getElementById("cajaTexto").value;
 
-  if (validateInput(userInput)) {
-    // Si solo tiene minusculas, proseguir
-    alert("Valido, procesando!");
-  } else {
-    // Si existe algun caracter no aceptado informar
+  if (!validateInput(userInput)) {
     alert("Solo minusculas, sin numeros ni caracteres especiales");
+    return false
   }
+    return true
 }
 
 function validateInput(input) {
@@ -70,13 +68,19 @@ const cifrarDecifrar = (text, type) => {
 buttonCopiar.addEventListener("click", copiarTexto)
 
 buttonEncriptar.addEventListener('click', () => {
-  const texto = cifrarDecifrar(recuperarTexto(), 'encrypt')
+  if (validateAndProcess()){
+      const texto = cifrarDecifrar(recuperarTexto(), 'encrypt')
   mostrarResultado(texto)
+  }
+
 })
 
 buttonDesencriptar.addEventListener('click', () => {
-  const textoDesencriptado = cifrarDecifrar(recuperarTexto(), 'decrypt')
+  if(validateAndProcess()){
+      const textoDesencriptado = cifrarDecifrar(recuperarTexto(), 'decrypt')
   mostrarResultado(textoDesencriptado)
+  }
+
 })
 
 
