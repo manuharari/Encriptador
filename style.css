@@ -61,7 +61,6 @@ textarea {
     font-size: 32px;
     font-weight: 400;
     padding: 2rem;
-    text-transform: lowercase;
 }
 
 .textBox::placeholder {
