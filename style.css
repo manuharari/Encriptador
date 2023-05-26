@@ -3,6 +3,7 @@
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
+    font-size: calc(15px + 0.390625vw);
 }
 
 body {
@@ -58,7 +59,7 @@ textarea {
     background-color: #ffffff;
     cursor: auto;
     color: #283045;
-    font-size: 32px;
+    /* font-size: 32px; */
     font-weight: 400;
     padding: 2rem;
 }
@@ -151,7 +152,7 @@ textarea {
 }
 
 .resultext{
-    font-size: larger;
+    /* font-size: 24px; */
     text-align: center;
     justify-content: center;
     margin: auto;
