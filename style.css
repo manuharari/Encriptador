@@ -57,7 +57,7 @@ textarea {
     border: none;
     background-color: ##f5f5f5;
     cursor: auto;
-    color: #0A3871;
+    color: #283045;
     font-size: 32px;
     font-weight: 400;
     padding: 2rem;
@@ -73,7 +73,7 @@ textarea {
     left: 370px;
     display: flex;
     gap: 10px;
-    color: #495057;
+    color: #283045;
     padding-bottom: 20px;
     font-weight: bold;
     font-size: large;
@@ -102,11 +102,11 @@ textarea {
     width: 100%;
     height: 67px;
     border-radius: 24px;
-    background-color: #495057;
-    color: #F3F5FC;
+    background-color: #283045;
+    color: #dab76a;
     font-size: 16px;
     font-weight: 400;
-    border: none;
+    border: 1px solid #dab76a;
     margin-right: 20px;
     cursor: pointer;
 }
@@ -115,11 +115,11 @@ textarea {
     width: 100%;
     height: 67px;
     border-radius: 24px;
-    background-color: #F3F5FC;
-    color: #0A3871;
+    background-color: #dab76a;
+    color: #283045;
     font-size: 16px;
     font-weight: 400;
-    border: 1px solid #0A3871;
+    border: 1px solid #283045;
     /* margin-right: 20px; */
     cursor: pointer;
 }
@@ -138,7 +138,8 @@ textarea {
     justify-content: center;
     height: 100%;
     text-align: center;
-    background: ##f5f5f5;
+    color: #283045;
+    /* background: #f5f5f5; */
 }
 
 .containerResult {
@@ -154,6 +155,7 @@ textarea {
     text-align: center;
     justify-content: center;
     margin: auto;
+    color: #283045;
 }
 
 .invisible {
@@ -174,12 +176,12 @@ textarea {
     width: 50%;
     height: 67px;
     border-radius: 24px;
-    background-color: #0A3871;
-    color: #ffffff;
+    background-color: #283045;
+    color: #dab76a;
     font-size: 16px;
     font-weight: 400;
     font-family: 'Inter', sans-serif;
-    border: none;
+    border: 1px solid #dab76a;
     cursor: pointer;
     /* position: relative; */
     top: 50px;
@@ -263,7 +265,7 @@ body {
     grid-area: footer;
     display: flex;
     align-items: center;
-    background-color: #495057;
+    background-color: #283045;
     height: 75px;
     position: absolute;
     bottom: 0;
@@ -278,12 +280,12 @@ body {
     padding: 8px;
     font-style: oblique;
     font-weight: bold;
-    color: #ffffff;
+    color: #dab76a;
     align-items: center;
   }
 
 .links{
     margin: 0 7px;
     /* justify-content: space-between; */
-    color: #ffffff;
+    color: #dab76a;
 }

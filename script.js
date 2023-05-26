@@ -26,7 +26,7 @@ function validateAndProcess() {
 }
 
 function validateInput(input) {
-  var lowercaseRegex = /^[a-z]+$/; // Solo minusculas
+  var lowercaseRegex = /^[a-z ]+$/; // Solo minusculas
   return lowercaseRegex.test(input);
 }
 
