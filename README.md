@@ -40,3 +40,7 @@ Asi mismo, si escribimos o pegamos un mensaje encriptado con las condiciones men
 - El resultado debe ser mostrado en la pantalla.
 
 # El encriptador es 100% responsivo y amigable. Si encuentran algun bug, no duden en contactarme!
+
+## Insignia ONE
+
+![Alt text](/FIGMA/Elementos/Insignia%20Challenge%201.png)
